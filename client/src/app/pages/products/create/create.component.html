@@ -1,0 +1,84 @@
+<div class="row mb-4 ml-4">
+  <button type="button" (click)="navigateToProducts()" class="btn btn-primary">
+    All Products
+  </button>
+</div>
+<form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="model.name"
+      #name="ngModel"
+      name="name"
+      required
+      id="name"
+    />
+    <div
+      class="p-1 alert-danger"
+      role="alert"
+      *ngIf="f.submitted && name.invalid && name.errors.required"
+    >
+      Name is required!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="short_name">Short Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="short_name"
+      [(ngModel)]="model.short_name"
+      #short_name="ngModel"
+      name="short_name"
+      required
+    />
+    <div
+      class="p-1 alert-danger"
+      role="alert"
+      *ngIf="f.submitted && short_name.invalid && short_name.errors.required"
+    >
+      Short Name is required!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input
+      type="number"
+      class="form-control"
+      id="price"
+      [(ngModel)]="model.price"
+      #price="ngModel"
+      name="price"
+      required
+    />
+    <div
+      class="p-1 alert-danger"
+      role="alert"
+      *ngIf="f.submitted && price.invalid && price.errors.required"
+    >
+      Price is required!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input
+      type="text"
+      class="form-control"
+      id="description"
+      [(ngModel)]="model.description"
+      #description="ngModel"
+      name="description"
+      required
+    />
+    <div
+      class="p-1 alert-danger"
+      role="alert"
+      *ngIf="f.submitted && description.invalid && description.errors.required"
+    >
+      Description is required!
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

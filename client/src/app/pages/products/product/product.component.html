@@ -1,0 +1,44 @@
+<div class="row mb-4 ml-4">
+  <button
+    type="button"
+    (click)="navigateToProducts()"
+    class="btn btn-primary mr-4"
+  >
+    All Products
+  </button>
+  <button
+    type="button"
+    (click)="navigateToNewProduct()"
+    class="btn btn-primary"
+  >
+    New Product
+  </button>
+</div>
+<table class="table" *ngIf="product">
+  <!-- <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Short Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead> -->
+  <tbody>
+    <tr>
+      <th scope="row">Name</th>
+      <td>{{ product.name }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Short Name</th>
+      <td>{{ product.short_name }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Price</th>
+      <td>{{ product.price }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Description</th>
+      <td>{{ product.description }}</td>
+    </tr>
+  </tbody>
+</table>
