@@ -31,6 +31,7 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {}
 
   resetModel(): void {
+    this.userFrm.resetForm();
     this.model = { name: '', password: '', email: '', phone: '' };
   }
   setTab(tab: string): void {
